@@ -17,7 +17,7 @@ if [ ! -d "$MODULE-project" ]; then
   mkdir {bin,docs,tests,scripts,"$MODULE"}
   touch README.md setup.py \
       "$MODULE/__init__.py" "$MODULE/$MODULE.PY" \
-      "tests/__init__.py" "tests/${MODULE}_test.py" \
+      "tests/__init__.py" "tests/test_${MODULE}.py" \
   
   # init git
   git init
