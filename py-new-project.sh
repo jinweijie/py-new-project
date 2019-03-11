@@ -16,9 +16,11 @@ if [ ! -d "$MODULE-project" ]; then
   cd "$MODULE-project"
   mkdir {bin,docs,tests,scripts,"$MODULE"}
   touch README.md setup.py \
-      "$MODULE/__init__.py" "$MODULE/$MODULE.PY" \
+      "$MODULE/__init__.py" "$MODULE/$MODULE.py" \
       "tests/__init__.py" "tests/test_${MODULE}.py" \
   
+  echo "from ${MODULE} import *" >> "$MODULE/__init__.py"
+
   # init git
   git init
   ../create-gitignore.sh
